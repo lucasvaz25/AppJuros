@@ -1,0 +1,46 @@
+unit uControleForms;
+
+interface
+
+uses
+  UFrmSimularFinanciamento,
+  System.Classes;
+
+type
+  TControleForms = class
+  private
+    AFormSimularFinanciamento: TFrmSimularFinanciamento;
+  public
+    constructor Create( Owner: TComponent );
+    destructor Destroy;
+    procedure Free;
+
+    procedure ExibeFormSimularFinanciamento;
+
+  end;
+
+implementation
+
+{ TControleForms }
+
+constructor TControleForms.Create( Owner: TComponent );
+begin
+  AFormSimularFinanciamento := TFrmSimularFinanciamento.Create( Owner );
+end;
+
+destructor TControleForms.Destroy;
+begin
+
+end;
+
+procedure TControleForms.ExibeFormSimularFinanciamento;
+begin
+
+end;
+
+procedure TControleForms.Free;
+begin
+
+end;
+
+end.

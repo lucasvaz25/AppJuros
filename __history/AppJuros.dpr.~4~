@@ -1,0 +1,16 @@
+program AppJuros;
+
+uses
+  Vcl.Forms,
+  uFrmPrincipal in 'View\uFrmPrincipal.pas' {FrmPrincipal},
+  uFrmBase in 'View\uFrmBase.pas' {FrmBase},
+  uFrmSimularFinanciamento in 'View\uFrmSimularFinanciamento.pas' {FrmSimularFinanciamento};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.Run;
+end.

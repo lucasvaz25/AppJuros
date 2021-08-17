@@ -1,0 +1,22 @@
+unit uAbstractController;
+
+interface
+
+type
+  TAbstractController = class
+
+  protected
+    Entity: TObject;
+  public
+    constructor Create;
+    destructor Destroy;
+
+    function Insert( var Value: TObject ): Boolean;
+    function Update( var Value: TObject ): Boolean;
+    function Recover( const VID: Integer; out Value: TObject ): Boolean;
+    function Delete( const VID: Integer ): Boolean;
+  end;
+
+implementation
+
+end.

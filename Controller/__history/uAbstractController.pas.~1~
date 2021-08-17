@@ -1,0 +1,13 @@
+unit uAbstractController;
+
+interface
+
+type
+  TAbstractController = class
+  public
+
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,19 @@
+unit uIAmortizacao;
+
+interface
+
+uses
+  UParcelas,
+  System.Generics.Collections;
+
+type
+  IAmortizacao = interface
+  d
+
+
+
+  end;
+
+implementation
+
+end.

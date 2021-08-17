@@ -1,0 +1,25 @@
+unit uFinancimento;
+
+interface
+
+uses
+  UAbstract;
+
+type
+  TFinanciamento = class( TAbstract )
+  private
+  public
+    constructor Create;
+    destructor Destroy;
+    procedure Free;
+
+    property ValorCapital: Currency;
+    property TaxaJuros: Double;
+    property QtdeMeses: Integer;
+
+    procedure CopiarDados( VValue: TFinanciamento );
+  end;
+
+implementation
+
+end.

@@ -1,0 +1,18 @@
+unit uIAmortizacao;
+
+interface
+
+uses
+  UParcelas,
+  System.Generics.Collections;
+
+type
+  IAmortizacao = interface
+
+    function ISistemaPagamentoUnico( var ALstParcela: TObjectList<TParcelas>; ATaxaJuros: Double; AValorCapital: Currency; AQtdeMeses: Integer ): Boolean;
+
+  end;
+
+implementation
+
+end.

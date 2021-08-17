@@ -1,0 +1,42 @@
+unit uAbstract;
+
+interface
+
+type
+  TAbstract = class
+  public
+  private
+    FCodigo: Integer;
+    constructor Create;
+    destructor Destroy;
+    procedure Free;
+    procedure SetCodigo( const Value: Integer );
+
+    property Codigo: Integer read FCodigo write SetCodigo;
+  end;
+
+implementation
+
+{ TAbstract }
+
+constructor TAbstract.Create;
+begin
+
+end;
+
+destructor TAbstract.Destroy;
+begin
+
+end;
+
+procedure TAbstract.Free;
+begin
+
+end;
+
+procedure TAbstract.SetCodigo( const Value: Integer );
+begin
+  FCodigo := Value;
+end;
+
+end.

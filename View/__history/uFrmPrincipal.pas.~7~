@@ -1,0 +1,77 @@
+unit uFrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.ToolWin,
+  Vcl.ActnMan,
+  Vcl.ActnCtrls,
+  Vcl.ActnMenus,
+  Vcl.Menus;
+
+type
+  TFrmPrincipal = class( TForm )
+    MainMenu1: TMainMenu;
+    Menu1: TMenuItem;
+    SimularFinanciamento1: TMenuItem;
+    N1: TMenuItem;
+    Sair1: TMenuItem;
+    procedure Sair1Click( Sender: TObject );
+    procedure SimularFinanciamento1Click( Sender: TObject );
+  private
+    { Private declarations }
+    procedure ChamadaFormulario( Classe: TFormClass );
+  public
+    { Public declarations }
+
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+uses
+  UFrmSimularFinanciamento;
+{$R *.dfm}
+
+
+procedure TFrmPrincipal.ChamadaFormulario( Classe: TFormClass );
+var
+  I: Integer;
+begin
+  for I := 0 to MDIChildCount - 1 do
+  begin
+    if ( MDIChildren[ I ] is Classe ) then
+    begin
+      if ( MDIChildren[ I ].WindowState = WsMinimized ) then
+        MDIChildren[ I ].WindowState := WsMaximized;
+
+      MDIChildren[ I ].BringToFront;
+      MDIChildren[ I ].SetFocus;
+      Exit;
+    end;
+  end;
+  Classe.Create( Application );
+end;
+
+procedure TFrmPrincipal.Sair1Click( Sender: TObject );
+begin
+  Close;
+end;
+
+procedure TFrmPrincipal.SimularFinanciamento1Click( Sender: TObject );
+begin
+  Self.ChamadaFormulario( TFrmSimularFinanciamento );
+end;
+
+end.

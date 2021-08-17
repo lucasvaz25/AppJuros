@@ -1,0 +1,28 @@
+unit uParcelas;
+
+interface
+
+uses
+  UAbstract,
+  UFinanciamento;
+
+type
+  TParcelas = class( TAbstract )
+  public
+    constructor Create;
+    destructor Destroy;
+    procedure Free;
+
+    property CodFinanciamento: Integer;
+    property NroParcela: Integer;
+    property ValorJuros: Currency;
+    property SaldoDevedor: Currency;
+    property Pagamento: Currency;
+    property AmortizacaoSaldoDevedor: Currency;
+
+    procedure CopiarDados( VValue: TParcelas );
+  end;
+
+implementation
+
+end.

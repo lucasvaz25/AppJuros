@@ -1,0 +1,93 @@
+unit uParcelas;
+
+interface
+
+uses
+  UAbstract,
+  UFinanciamento;
+
+type
+  TParcelas = class( TAbstract )
+  private
+    FCodFinanciamento: Integer;
+    FSaldoDevedor: Currency;
+    FPagamento: Currency;
+    FValorJuros: Currency;
+    FAmortizacaoSaldoDevedor: Currency;
+    FNroParcela: Integer;
+    procedure SetAmortizacaoSaldoDevedor( const Value: Currency );
+    procedure SetCodFinanciamento( const Value: Integer );
+    procedure SetNroParcela( const Value: Integer );
+    procedure SetPagamento( const Value: Currency );
+    procedure SetSaldoDevedor( const Value: Currency );
+    procedure SetValorJuros( const Value: Currency );
+  public
+    constructor Create;
+    destructor Destroy;
+    procedure Free;
+
+    property CodFinanciamento: Integer read FCodFinanciamento write SetCodFinanciamento;
+    property NroParcela: Integer read FNroParcela write SetNroParcela;
+    property ValorJuros: Currency read FValorJuros write SetValorJuros;
+    property SaldoDevedor: Currency read FSaldoDevedor write SetSaldoDevedor;
+    property Pagamento: Currency read FPagamento write SetPagamento;
+    property AmortizacaoSaldoDevedor: Currency read FAmortizacaoSaldoDevedor write SetAmortizacaoSaldoDevedor;
+
+    procedure CopiarDados( VValue: TParcelas );
+  end;
+
+implementation
+
+{ TParcelas }
+
+procedure TParcelas.CopiarDados( VValue: TParcelas );
+begin
+
+end;
+
+constructor TParcelas.Create;
+begin
+
+end;
+
+destructor TParcelas.Destroy;
+begin
+
+end;
+
+procedure TParcelas.Free;
+begin
+
+end;
+
+procedure TParcelas.SetAmortizacaoSaldoDevedor( const Value: Currency );
+begin
+  FAmortizacaoSaldoDevedor := Value;
+end;
+
+procedure TParcelas.SetCodFinanciamento( const Value: Integer );
+begin
+  FCodFinanciamento := Value;
+end;
+
+procedure TParcelas.SetNroParcela( const Value: Integer );
+begin
+  FNroParcela := Value;
+end;
+
+procedure TParcelas.SetPagamento( const Value: Currency );
+begin
+  FPagamento := Value;
+end;
+
+procedure TParcelas.SetSaldoDevedor( const Value: Currency );
+begin
+  FSaldoDevedor := Value;
+end;
+
+procedure TParcelas.SetValorJuros( const Value: Currency );
+begin
+  FValorJuros := Value;
+end;
+
+end.

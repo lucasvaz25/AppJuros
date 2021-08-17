@@ -1,0 +1,18 @@
+unit uAbstract;
+
+interface
+
+type
+  TAbstract = class
+  public
+  private
+    constructor Create;
+    destructor Destroy;
+    procedure Free;
+
+    property Codigo: Integer;
+  end;
+
+implementation
+
+end.
